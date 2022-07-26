@@ -5,7 +5,8 @@ int no(unsigned int a, const char form,void *new);
 int _printf(const char*format,...);
 int main()
 {
-	_printf("boy%d",10);
+	char *ho = "ingley";
+	_printf("boy%c%d%d",ho,8-7,78);
 	return 0;
 }
 /* this is the printf function */
@@ -18,9 +19,19 @@ int _printf(const char *format,...){
 	{
 		if (*(format + i)=='%')
 		{
-			a+=1;
-			no(a,*(format +i+1),&format);
+			switch (*(format +i+i))
+			{
+			case 'd':;
+				int boy = va_arg(args,int);
+				printf("%d\n",boy);
+			case 'c':;
+				char *now = va_arg(args, char *);
+				printf("%s\n",now);
+			}
+		
+
 		}
+	
 	}
 
 	return 0;
